@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = "roles")
+@ToString(exclude = "personRoles")
 public class Person {
 
     @Id

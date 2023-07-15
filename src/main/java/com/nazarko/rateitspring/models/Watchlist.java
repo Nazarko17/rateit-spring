@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Entity
-@ToString(exclude = {"movies", "tvSeries"})
+@ToString(exclude = {"movies", "tvSeries", "books"})
 public class Watchlist {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +25,10 @@ public class Watchlist {
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<TVSeries> tvSeries = new HashSet<>();
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Book> books = new HashSet<>();
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User user;

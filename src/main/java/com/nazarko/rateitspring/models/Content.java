@@ -7,10 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.context.properties.bind.Name;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -32,11 +29,9 @@ public abstract class Content {
 
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    @Column(name = "movie_tv_genres")
-    private Set<MovieTVGenres> movieTVGenres;
+    private Set<MovieTVGenres> genres;
 
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    @Column(name = "movie_tv_genres")
-    private Set<MovieTVRatingEnum> movieTVRatingsEnum;
+    private Set<MovieTVRatingEnum> ratingsEnum;
 }

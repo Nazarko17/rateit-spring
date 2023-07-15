@@ -28,6 +28,9 @@ public class PersonRole {
     private TVSeries tvSeries;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Book book;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Person person;
 
     public PersonRole(int id, PersonRoleEnum personRoleEnum, Person person) {
