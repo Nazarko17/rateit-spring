@@ -1,44 +1,41 @@
 package com.nazarko.rateitspring.models;
 
 import com.nazarko.rateitspring.models.enums.MovieTVGenres;
-import com.nazarko.rateitspring.models.enums.MovieTVRatingEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@MappedSuperclass
-public abstract class Content {
+@Builder
+@Entity
+public class Game {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private float rating;
     private String image;
+    private float rating;
+    private String developer;
+    private String publisher;
+    private String releaseDate;
     private String description;
-
-    @ElementCollection
-    private Set<String> languages = new HashSet<>();
-
-    @ElementCollection
-    private Set<String> countriesOfOrigin = new HashSet<>();
-
-    @ElementCollection
-    private Set<String> productionCompanies = new HashSet<>();
 
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private Set<MovieTVGenres> genres;
 
     @ElementCollection
-    @Enumerated(EnumType.STRING)
-    private Set<MovieTVRatingEnum> ratingsEnum;
+    private Set<String> platforms = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "game")
+    private List<Review> reviews = new ArrayList<>();
 }

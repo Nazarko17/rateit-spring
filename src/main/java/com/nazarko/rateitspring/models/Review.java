@@ -34,6 +34,9 @@ public class Review {
     private TVSeries tvSeries;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Game game;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Book book;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "review")

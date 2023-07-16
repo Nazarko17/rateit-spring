@@ -16,7 +16,6 @@ public class PersonRole {
     private int id;
     private String title;
 
-    @Column(name = "enum_role")
     @Enumerated(EnumType.STRING)
     private PersonRoleEnum personRoleEnum = PersonRoleEnum.ACTOR;
 

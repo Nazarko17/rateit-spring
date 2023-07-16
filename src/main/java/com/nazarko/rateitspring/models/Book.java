@@ -1,7 +1,6 @@
 package com.nazarko.rateitspring.models;
 
 import com.nazarko.rateitspring.models.enums.BookGenres;
-import com.nazarko.rateitspring.models.enums.MovieTVGenres;
 import jakarta.persistence.*;
 import lombok.*;
 
