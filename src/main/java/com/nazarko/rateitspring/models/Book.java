@@ -1,6 +1,6 @@
 package com.nazarko.rateitspring.models;
 
-import com.nazarko.rateitspring.models.enums.BookGenres;
+import com.nazarko.rateitspring.models.enums.BookGenre;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,7 +25,7 @@ public class Book {
 
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<BookGenres> genres;
+    private Set<BookGenre> genres;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "book")
     private List<Review> reviews = new ArrayList<>();

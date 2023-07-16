@@ -1,6 +1,6 @@
 package com.nazarko.rateitspring.models;
 
-import com.nazarko.rateitspring.models.enums.MovieTVGenres;
+import com.nazarko.rateitspring.models.enums.MovieTVGenre;
 import com.nazarko.rateitspring.models.enums.MovieTVRatingEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,7 +36,7 @@ public abstract class Content {
 
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<MovieTVGenres> genres;
+    private Set<MovieTVGenre> genres;
 
     @ElementCollection
     @Enumerated(EnumType.STRING)

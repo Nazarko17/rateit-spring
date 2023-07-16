@@ -1,6 +1,6 @@
 package com.nazarko.rateitspring.models;
 
-import com.nazarko.rateitspring.models.enums.MovieTVGenres;
+import com.nazarko.rateitspring.models.enums.GameGenre;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,7 +31,7 @@ public class Game {
 
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<MovieTVGenres> genres;
+    private Set<GameGenre> genres;
 
     @ElementCollection
     private Set<String> platforms = new HashSet<>();

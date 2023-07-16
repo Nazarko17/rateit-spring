@@ -31,10 +31,4 @@ public class PersonRole {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Person person;
-
-    public PersonRole(int id, PersonRoleEnum personRoleEnum, Person person) {
-        this.id = id;
-        this.personRoleEnum = personRoleEnum;
-        this.person = person;
-    }
 }
