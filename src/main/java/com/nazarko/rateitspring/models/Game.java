@@ -28,6 +28,7 @@ public class Game {
     private String publisher;
     private String releaseDate;
     private String description;
+    private int numberOfRatings;
 
     @ElementCollection
     @Enumerated(EnumType.STRING)

@@ -22,6 +22,7 @@ public class Book {
     private String image;
     private int releaseYear;
     private String description;
+    private int numberOfRatings;
 
     @ElementCollection
     @Enumerated(EnumType.STRING)

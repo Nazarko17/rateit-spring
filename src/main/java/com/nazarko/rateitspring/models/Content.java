@@ -24,6 +24,7 @@ public abstract class Content {
     private float rating;
     private String image;
     private String description;
+    private int numberOfRatings;
 
     @ElementCollection
     private Set<String> languages = new HashSet<>();
