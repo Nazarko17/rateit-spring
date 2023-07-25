@@ -15,6 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Entity
+@ToString(exclude = {"reviews", "personRoles", "seasons"})
 public class TVSeries extends Content {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +34,5 @@ public class TVSeries extends Content {
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "tvSeries")
-    private Set<Episode> episodes = new HashSet<>();
+    private Set<Season> seasons = new HashSet<>();
 }
