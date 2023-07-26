@@ -17,6 +17,11 @@ public class Watchlist {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int numberOfGames;
+    private int numberOfBooks;
+    private int numberOfMovies;
+    private int numberOfTVSeries;
+    private int overallNumberOfContent;
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

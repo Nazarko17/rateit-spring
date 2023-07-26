@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 public class ArticleDTO {
 
     private int id;
-    private String subject;
     private String text;
+    private String subject;
     private String createdAt;
 
     private UserDTO userDTO;
