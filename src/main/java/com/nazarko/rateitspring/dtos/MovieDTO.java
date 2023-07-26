@@ -2,17 +2,21 @@ package com.nazarko.rateitspring.dtos;
 
 import lombok.*;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MovieDTO extends ContentDTO {
+public class MovieDTO {
 
     private int id;
-    private int releaseYear;
+    private String title;
+    private float rating;
+    private String image;
+    private int releaseDate;
+    private String trailerURL;
+    private String description;
+    private int numberOfRatings;
     private int runTime;
     private float budget;
     private float boxOffice;
-    private String trailerURL;
 }

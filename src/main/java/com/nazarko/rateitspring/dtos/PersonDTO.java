@@ -9,14 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WatchlistDTO {
+public class PersonDTO {
 
     private int id;
-    private int numberOfGames;
-    private int numberOfBooks;
-    private int numberOfMovies;
-    private int numberOfTVSeries;
-    private int overallNumberOfContent;
-
-    private UserDTO userDTO;
+    private String name;
+    private String surname;
+    private String bio;
+    private String avatar;
 }

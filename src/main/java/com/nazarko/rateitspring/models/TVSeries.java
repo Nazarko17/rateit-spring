@@ -20,8 +20,6 @@ public class TVSeries extends Content {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int releaseYear;
-    private String trailerURL;
     private int numberOfEpisodes;
     private int averageRunTimeOfEpisodes;
 

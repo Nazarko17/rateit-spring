@@ -18,6 +18,7 @@ public class Book {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String title;
     private float rating;
     private String image;
     private int releaseYear;

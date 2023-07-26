@@ -23,6 +23,8 @@ public abstract class Content {
     private String title;
     private float rating;
     private String image;
+    private int releaseDate;
+    private String trailerURL;
     private String description;
     private int numberOfRatings;
 

@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class BookDTO {
 
     private int id;
+    private String title;
     private float rating;
     private String image;
     private int releaseYear;
