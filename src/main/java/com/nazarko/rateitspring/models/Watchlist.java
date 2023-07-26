@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Entity
-@ToString(exclude = {"movies", "tvSeries", "books"})
+@ToString(exclude = {"movies", "tvSeries", "books", "games"})
 public class Watchlist {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

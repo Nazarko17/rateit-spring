@@ -13,8 +13,8 @@ public class Comment {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String subject;
     private String text;
+    private String subject;
     private String createdAt;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

@@ -76,23 +76,23 @@ public class User implements UserDetails {
         return List.of(new SimpleGrantedAuthority(userRoleEnum.name()));
     }
 
-    private boolean isAccountNonExpired;
+    private boolean isAccountNonExpired = true;
     @Override
     public boolean isAccountNonExpired() {
         return this.isAccountNonExpired;
     }
 
-    private boolean isAccountNonLocked;
+    private boolean isAccountNonLocked = true;
     @Override
     public boolean isAccountNonLocked() { return this.isAccountNonLocked; }
 
-    private boolean isCredentialsNonExpired;
+    private boolean isCredentialsNonExpired = true;
     @Override
     public boolean isCredentialsNonExpired() {
         return this.isCredentialsNonExpired;
     }
 
-    private boolean isEnabled;
+    private boolean isEnabled = false;
     @Override
     public boolean isEnabled() {
         return this.isEnabled;
