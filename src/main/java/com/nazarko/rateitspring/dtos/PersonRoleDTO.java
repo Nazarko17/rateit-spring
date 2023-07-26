@@ -1,9 +1,5 @@
 package com.nazarko.rateitspring.dtos;
 
-import com.nazarko.rateitspring.models.Book;
-import com.nazarko.rateitspring.models.Movie;
-import com.nazarko.rateitspring.models.Person;
-import com.nazarko.rateitspring.models.TVSeries;
 import com.nazarko.rateitspring.models.enums.PersonRoleEnum;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
