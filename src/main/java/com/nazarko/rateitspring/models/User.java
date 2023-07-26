@@ -1,6 +1,7 @@
 package com.nazarko.rateitspring.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.nazarko.rateitspring.models.enums.Country;
 import com.nazarko.rateitspring.models.enums.UserRoleEnum;
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,10 +21,13 @@ public class User implements UserDetails {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String email;
     private String username;
     private String password;
-    private String email;
     private String createdAt;
+
+    @Enumerated(EnumType.STRING)
+    private Country country;
 
     @Enumerated(EnumType.STRING)
     private UserRoleEnum userRoleEnum;
