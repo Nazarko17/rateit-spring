@@ -1,6 +1,5 @@
 package com.nazarko.rateitspring.dtos;
 
-import com.nazarko.rateitspring.models.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
