@@ -22,6 +22,7 @@ public class Book {
     private float rating;
     private String image;
     private int releaseYear;
+    private int numberOfPages;
     private String description;
     private int numberOfRatings;
 

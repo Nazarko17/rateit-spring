@@ -17,6 +17,7 @@ public class BookDTOMapper implements Function<Book, BookDTO> {
                 book.getRating(),
                 book.getImage(),
                 book.getReleaseYear(),
+                book.getNumberOfPages(),
                 book.getDescription(),
                 book.getNumberOfRatings()
         );
