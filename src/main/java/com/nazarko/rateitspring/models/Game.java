@@ -1,6 +1,7 @@
 package com.nazarko.rateitspring.models;
 
 import com.nazarko.rateitspring.models.enums.GameGenre;
+import com.nazarko.rateitspring.models.enums.GamePlatform;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,7 +36,8 @@ public class Game {
     private Set<GameGenre> genres;
 
     @ElementCollection
-    private Set<String> platforms = new HashSet<>();
+    @Enumerated(EnumType.STRING)
+    private Set<GamePlatform> platforms;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "game")
     private List<Review> reviews = new ArrayList<>();
