@@ -1,5 +1,6 @@
 package com.nazarko.rateitspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class Person {
     private String bio;
     private String avatar;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "person")
     private List<PersonRole> personRoles = new ArrayList<>();
 }

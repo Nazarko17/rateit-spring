@@ -1,5 +1,6 @@
 package com.nazarko.rateitspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nazarko.rateitspring.models.enums.GameGenre;
 import com.nazarko.rateitspring.models.enums.GamePlatform;
 import jakarta.persistence.*;
@@ -31,14 +32,17 @@ public class Game {
     private String description;
     private int numberOfRatings;
 
+    @JsonIgnore
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<GameGenre> genres;
+    private Set<GameGenre> genres = new HashSet<>();
 
+    @JsonIgnore
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<GamePlatform> platforms;
+    private Set<GamePlatform> platforms = new HashSet<>();
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "game")
     private List<Review> reviews = new ArrayList<>();
 }

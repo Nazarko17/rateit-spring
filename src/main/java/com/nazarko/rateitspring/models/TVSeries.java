@@ -23,6 +23,7 @@ public class TVSeries extends Content {
     private int numberOfEpisodes;
     private int averageRunTimeOfEpisodes;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "tvSeries")
     private List<Review> reviews = new ArrayList<>();
 

@@ -1,14 +1,9 @@
 package com.nazarko.rateitspring.services;
 
-import com.nazarko.rateitspring.daos.BookDAO;
 import com.nazarko.rateitspring.daos.GameDAO;
-import com.nazarko.rateitspring.dtos.BookDTO;
 import com.nazarko.rateitspring.dtos.GameDTO;
-import com.nazarko.rateitspring.dtos.mappers.BookDTOMapper;
 import com.nazarko.rateitspring.dtos.mappers.GameDTOMapper;
-import com.nazarko.rateitspring.models.Book;
 import com.nazarko.rateitspring.models.Game;
-import com.nazarko.rateitspring.models.enums.BookGenre;
 import com.nazarko.rateitspring.models.enums.GameGenre;
 import com.nazarko.rateitspring.models.enums.GamePlatform;
 import lombok.RequiredArgsConstructor;

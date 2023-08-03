@@ -1,5 +1,7 @@
 package com.nazarko.rateitspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.nazarko.rateitspring.models.enums.Country;
 import com.nazarko.rateitspring.models.enums.MovieTVGenre;
 import com.nazarko.rateitspring.models.enums.MovieTVRatingEnum;
 import jakarta.persistence.*;
@@ -28,20 +30,24 @@ public abstract class Content {
     private String description;
     private int numberOfRatings;
 
+    @Enumerated(EnumType.STRING)
+    private MovieTVRatingEnum ratingEnum;
+
+    @JsonIgnore
     @ElementCollection
     private Set<String> languages = new HashSet<>();
 
-    @ElementCollection
-    private Set<String> countriesOfOrigin = new HashSet<>();
-
+    @JsonIgnore
     @ElementCollection
     private Set<String> productionCompanies = new HashSet<>();
 
+    @JsonIgnore
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<MovieTVGenre> genres;
+    private Set<MovieTVGenre> genres = new HashSet<>();
 
+    @JsonIgnore
     @ElementCollection
     @Enumerated(EnumType.STRING)
-    private Set<MovieTVRatingEnum> ratingsEnum;
+    private Set<Country> countriesOfOrigin = new HashSet<>();
 }

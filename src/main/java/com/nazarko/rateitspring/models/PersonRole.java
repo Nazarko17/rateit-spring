@@ -19,7 +19,6 @@ public class PersonRole {
     @Enumerated(EnumType.STRING)
     private PersonRoleEnum personRoleEnum = PersonRoleEnum.ACTOR;
 
-
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Movie movie;
 

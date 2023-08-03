@@ -21,7 +21,8 @@ public class TVSeriesDTOMapper implements Function<TVSeries, TVSeriesDTO> {
                 tvSeries.getDescription(),
                 tvSeries.getNumberOfRatings(),
                 tvSeries.getNumberOfEpisodes(),
-                tvSeries.getAverageRunTimeOfEpisodes()
+                tvSeries.getAverageRunTimeOfEpisodes(),
+                tvSeries.getRatingEnum()
         );
     }
 }

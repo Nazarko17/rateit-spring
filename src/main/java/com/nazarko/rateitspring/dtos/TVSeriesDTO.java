@@ -1,5 +1,8 @@
 package com.nazarko.rateitspring.dtos;
 
+import com.nazarko.rateitspring.models.enums.MovieTVRatingEnum;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.*;
 
 @Data
@@ -18,4 +21,7 @@ public class TVSeriesDTO {
     private int numberOfRatings;
     private int numberOfEpisodes;
     private int averageRunTimeOfEpisodes;
+
+    @Enumerated(EnumType.STRING)
+    private MovieTVRatingEnum ratingEnum;
 }

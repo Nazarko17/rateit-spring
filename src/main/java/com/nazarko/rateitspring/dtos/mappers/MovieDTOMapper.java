@@ -22,7 +22,8 @@ public class MovieDTOMapper implements Function<Movie, MovieDTO> {
                 movie.getNumberOfRatings(),
                 movie.getRunTime(),
                 movie.getBudget(),
-                movie.getBoxOffice()
+                movie.getBoxOffice(),
+                movie.getRatingEnum()
         );
     }
 }
