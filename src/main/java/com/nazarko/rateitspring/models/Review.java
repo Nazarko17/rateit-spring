@@ -1,5 +1,7 @@
 package com.nazarko.rateitspring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +24,8 @@ public class Review {
     private String createdAt;
     private String text = null;
     private String subject = null;
+
+    @JsonProperty("isContainsSpoiler")
     private boolean isContainsSpoiler;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -39,6 +43,7 @@ public class Review {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Book book;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "review")
     private List<Comment> comments = new ArrayList<>();
 }

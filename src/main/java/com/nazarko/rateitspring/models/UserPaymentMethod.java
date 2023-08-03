@@ -21,6 +21,7 @@ public class UserPaymentMethod {
     private String dateOfExpiry;
     private String bankName;
 
+    @Enumerated(EnumType.STRING)
     private UserPaymentMethodCardType userPaymentMethodCardType;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

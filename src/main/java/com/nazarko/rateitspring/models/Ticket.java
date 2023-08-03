@@ -1,5 +1,6 @@
 package com.nazarko.rateitspring.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -17,6 +18,8 @@ public class Ticket {
     private int id;
     private String subject;
     private String text;
+
+    @JsonProperty("status")
     private boolean status;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

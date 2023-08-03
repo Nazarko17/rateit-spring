@@ -1,5 +1,6 @@
 package com.nazarko.rateitspring.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +19,8 @@ public class ReviewDTO {
     private String createdAt;
     private String text;
     private String subject;
+
+    @JsonProperty("isContainsSpoiler")
     private boolean isContainsSpoiler;
 
     private UserDTO userDTO;
