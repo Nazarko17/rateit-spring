@@ -2,7 +2,9 @@ package com.nazarko.rateitspring.services;
 
 import com.nazarko.rateitspring.daos.GameDAO;
 import com.nazarko.rateitspring.dtos.GameDTO;
+import com.nazarko.rateitspring.dtos.ReviewDTO;
 import com.nazarko.rateitspring.dtos.mappers.GameDTOMapper;
+import com.nazarko.rateitspring.dtos.mappers.ReviewDTOMapper;
 import com.nazarko.rateitspring.models.Game;
 import com.nazarko.rateitspring.models.enums.GameGenre;
 import com.nazarko.rateitspring.models.enums.GamePlatform;
@@ -10,7 +12,9 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -21,6 +25,7 @@ public class GameService {
     private final GameDAO gameDAO;
     private final ModelMapper modelMapper;
     private final GameDTOMapper gameDTOMapper;
+    private final ReviewDTOMapper reviewDTOMapper;
 
     public GameDTO findGame(int id) {
         return gameDTOMapper.apply(gameDAO.findById(id));
@@ -36,6 +41,10 @@ public class GameService {
 
     public Set<GamePlatform> findGamePlatforms(int id) {
         return gameDAO.findById(id).getPlatforms();
+    }
+
+    public List<ReviewDTO> findGameReviews(int id) {
+        return gameDAO.findById(id).getReviews().stream().map(reviewDTOMapper).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public GameDTO saveGame(GameDTO gameDTO) {

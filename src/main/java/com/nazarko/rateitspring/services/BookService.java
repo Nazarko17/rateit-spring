@@ -41,11 +41,11 @@ public class BookService {
         return bookDAO.findById(id).getGenres();
     }
 
-    public List<ReviewDTO> findMovieReviews(int id) {
+    public List<ReviewDTO> findBookReviews(int id) {
         return bookDAO.findById(id).getReviews().stream().map(reviewDTOMapper).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public List<PersonRoleDTO> findMoviePersonRoles(int id) {
+    public List<PersonRoleDTO> findBookPersonRoles(int id) {
         return bookDAO.findById(id).getPersonRoles().stream().map(personRoleDTOMapper).collect(Collectors.toCollection(ArrayList::new));
     }
 
